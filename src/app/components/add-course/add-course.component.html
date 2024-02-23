@@ -1,0 +1,48 @@
+<div *ngIf="isLoggedIn" class="container">
+    <h1 class="title">
+        ADD COURSE
+    </h1>
+    <form class="form">
+        <div class="div-form">
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Course Name</mat-label>
+                <input matInput type="text" placeholder="Enter course name" name="courseName"minlength="20" [(ngModel)] ="courseName" required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Technology</mat-label>
+                <input matInput type="email" placeholder="Enter technology" name="technology" [(ngModel)] ="technology" required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Start date</mat-label>
+                <input matInput [matDatepicker]="pickerStartDate" name="startDate" [(ngModel)] ="startDate" required>
+                <mat-datepicker-toggle matSuffix [for]="pickerStartDate"></mat-datepicker-toggle>
+                <mat-datepicker autoFocus="false" #pickerStartDate></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>End date</mat-label>
+                <input matInput [matDatepicker]="pickerEndDate" name="endDate" [(ngModel)] ="endDate" required>
+                <mat-datepicker-toggle matSuffix [for]="pickerEndDate"></mat-datepicker-toggle>
+                <mat-datepicker autoFocus="false" #pickerEndDate></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Launch URL</mat-label>
+                <input matInput type="text" placeholder="Enter Launch URL" name="launchUrl" [(ngModel)] ="launchUrl" required>
+            </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Details</mat-label>
+                <textarea matInput type="text" placeholder="Enter details" name="details" minlength="100" [(ngModel)] ="details" required></textarea>
+            </mat-form-field>
+            <div>
+                <span class="button-css"><button mat-raised-button color="primary" (click)="addCourse()">Add Course</button></span>
+                <span class="button-css"><button mat-stroked-button color="primary" (click)="cancel()">Cancel</button></span>
+            </div>
+        </div>
+    </form>
+</div>
+<div *ngIf="!isLoggedIn" style="text-align: center;top: 37%;
+left: 35%;
+position: fixed;">
+  <h2>Please sign in again as the session is logged out.</h2>
+  <div> <a routerLink="/login" routerLinkActive="active">Sign In</a></div>
+</div>
+<router-outlet></router-outlet>

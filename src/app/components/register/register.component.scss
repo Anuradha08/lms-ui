@@ -1,0 +1,19 @@
+.container {
+    padding: 100px;
+    .title{
+        text-align: center;
+    }
+    .form {
+        text-align: center;
+        .div-form{
+            text-align: -webkit-center;
+        }
+        .field {
+            display: table-caption;
+            width: 500px;
+        }
+        .button-css{
+            padding: 8px;
+        }
+    }
+}

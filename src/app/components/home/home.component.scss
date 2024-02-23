@@ -1,0 +1,30 @@
+.table-container{
+  padding: 24px;
+  .title{
+    text-align: center;
+  }
+  .demo-table {
+    width: 95%;
+    margin: auto;
+    .align-delete{
+      text-align: center;
+    }
+    .table-header{
+      background-color: lightblue;
+      font-weight: bold;
+      font-size: 13px;
+    }
+  }
+  
+  .header-container {
+    padding: 16px;
+    .filter-css{
+      padding-left: 24px;
+    }
+    .button-css {
+      padding-right: 8px;
+      float: right; 
+      padding-top: 5px;
+    }
+  }
+}
